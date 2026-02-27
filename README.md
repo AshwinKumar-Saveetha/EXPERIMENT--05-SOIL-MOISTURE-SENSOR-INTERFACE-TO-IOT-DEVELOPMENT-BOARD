@@ -134,7 +134,7 @@ int main(void)
 	  HAL_ADC_PollForConversion(&hadc,HAL_MAX_DELAY);
 	  readValue=HAL_ADC_GetValue(&hadc);
 	  printf("Read value : %d\n",readValue);
-	  uint32_t soilmoist=100-((readValue/4096)*100);//2^12=4096
+	  uint32_t soilmoist=100-(readValue/40.96);//2^12=4096
 	  printf("Soil moisture : %ld %%\n",soilmoist);
 	  HAL_Delay(1000);
   }
@@ -147,8 +147,13 @@ PUTCHAR_PROTOTYPE
 ```
 
 ## Output screen shots on serial monitor   :
+
+<img width="1007" height="1045" alt="Screenshot 2026-02-27 103746" src="https://github.com/user-attachments/assets/bac1caed-b015-496d-93b7-c2891ee08a72" />
+
+ ## Circuit board :
  
- 
+ ![exp 05](https://github.com/user-attachments/assets/aaf55f6a-11f8-4f7b-9717-629d41849663)
+
  
  
 ## Result :
